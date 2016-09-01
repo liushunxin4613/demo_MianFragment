@@ -29,6 +29,9 @@
     <!-- app_logo据分割线的间距 -->
     <dimen name="margin_less">60dp</dimen>
     
+    <dimen name="pad_gridview">6dp</dimen>
+    <dimen name="marigin_bottom_gridview">20dp</dimen>
+    
     <!-- 字体类型 -->
     
     <dimen name="text_size_24">24sp</dimen>

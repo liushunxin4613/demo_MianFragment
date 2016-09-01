@@ -4,15 +4,23 @@
     <string name="app_name">MainFragmentDemo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
-    
+    <string name="image_string">img</string>
+
+    <!-- 其他 -->
+
+
     <!-- MainActivity -->
-    
     <string name="activity_main_home">首页</string>
     <string name="activity_main_collect">收藏</string>
     <string name="activity_main_find">发现</string>
     <string name="activity_main_me">我</string>
 
-    
-    
+    <!-- HomeFragment -->
+    <string name="fm_home_gridview_0">电子地图</string>
+    <string name="fm_home_gridview_1">基础信息</string>
+    <string name="fm_home_gridview_2">帮扶管理</string>
+    <string name="fm_home_gridview_3">扶贫项目管理</string>
+    <string name="fm_home_gridview_4">信息公告</string>
+    <string name="fm_home_gridview_5">统计分析</string>
+
 </resources>
