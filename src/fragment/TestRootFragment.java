@@ -1,37 +1,27 @@
 package fragment;
 
-import util.dataUtil.ConfigDataUtil.FragmentData;
-import android.view.View;
+import util.dataUtil.ConfigDataUtil.DataRootFragmentUtil;
 import android.widget.TextView;
-import base.BaseFragment;
+import base.BaseMainFragment;
 
-public abstract class TestRootFragment extends BaseFragment {
+public abstract class TestRootFragment extends BaseMainFragment {
 	
 	protected TextView tv;
 
 	@Override
 	public int getRootViewId() {
-		return FragmentData.LayoutId;
+		return DataRootFragmentUtil.LayoutId;
 	}
 	
 	@Override
 	public void initView() {
 		
-		tv = (TextView) rootView.findViewById(FragmentData.TvId);
+		tv = (TextView) rootView.findViewById(DataRootFragmentUtil.TvId);
 		tv.setText(getTvText());
 		
 	}
 
 	protected abstract String getTvText();
 	
-	@Override
-	public void setMenuVisibility(boolean menuVisible) {
-		super.setMenuVisibility(menuVisible);
-		
-		if (this.getView() != null) {
-			this.getView().setVisibility(menuVisible ? View.VISIBLE : View.GONE);
-		}
-		
-	}
 
 }

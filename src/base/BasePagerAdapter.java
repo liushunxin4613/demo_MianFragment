@@ -9,9 +9,6 @@ public abstract class BasePagerAdapter<T> extends PagerAdapter{
 
 	protected List<T> list;
 	
-	public BasePagerAdapter() {
-	}
-	
 	public BasePagerAdapter(List<T> list) {
 		this.list = list;
 	}

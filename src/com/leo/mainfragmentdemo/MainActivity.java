@@ -1,11 +1,11 @@
 package com.leo.mainfragmentdemo;
 
-import fragment.AFragment;
 import fragment.BFragment;
 import fragment.CFragment;
 import fragment.DFragment;
+import fragment.HomeFragment;
 
-import util.dataUtil.ConfigDataUtil.MainActivityData;
+import util.dataUtil.ConfigDataUtil.DataMainActivityUtil;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.View;
@@ -39,7 +39,7 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 		public Fragment getItem(int pos) {
 			switch (pos) {
 			case 0:
-				return new AFragment();
+				return new HomeFragment();
 			case 1:
 				return new BFragment();
 			case 2:
@@ -59,19 +59,19 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 	
 	@Override
 	public int getRootViewId() {
-		return MainActivityData.LayoutId;
+		return DataMainActivityUtil.LayoutId;
 	}
 	
 	@Override
 	public void initView() {
 		
-		frameLayout = (FrameLayout) findViewById(MainActivityData.FrameId);
+		frameLayout = (FrameLayout) findViewById(DataMainActivityUtil.FrameId);
 		
-		radioGroup = (RadioGroup) findViewById(MainActivityData.RadioGroupId);
+		radioGroup = (RadioGroup) findViewById(DataMainActivityUtil.RadioGroupId);
 		
-		radioButtonArr = new RadioButton[MainActivityData.RadioButtonArrId.length];
-		for (int i = 0; i < MainActivityData.RadioButtonArrId.length; i++) {
-			radioButtonArr[i] = (RadioButton) findViewById(MainActivityData.RadioButtonArrId[i]);
+		radioButtonArr = new RadioButton[DataMainActivityUtil.RadioButtonArrId.length];
+		for (int i = 0; i < DataMainActivityUtil.RadioButtonArrId.length; i++) {
+			radioButtonArr[i] = (RadioButton) findViewById(DataMainActivityUtil.RadioButtonArrId[i]);
 			radioButtonArr[i].setId(i);
 			radioButtonArr[i].setOnClickListener(this);
 		}
