@@ -1,11 +1,11 @@
 package base;
 
 import inter.AcFmInterface;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
-public class BaseFragmentActivity extends FragmentActivity implements AcFmInterface{
-
+public class BaseActivity extends Activity implements AcFmInterface{
+	
 	public static String TAG;
 	
 	@Override
@@ -19,16 +19,17 @@ public class BaseFragmentActivity extends FragmentActivity implements AcFmInterf
 		initView();
 		initData();
 	}
+	
 
 	@Override
 	public void initRootView() {
 	}
 
 	@Override
-	public int getRootViewId(){
+	public int getRootViewId() {
 		return 0;
-	};
-	
+	}
+
 	@Override
 	public void initView() {
 	}
@@ -36,6 +37,5 @@ public class BaseFragmentActivity extends FragmentActivity implements AcFmInterf
 	@Override
 	public void initData() {
 	}
-	
-	
+
 }

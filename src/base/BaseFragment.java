@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class BaseFragment extends Fragment implements AcFmInterface{
+public class BaseFragment extends Fragment implements AcFmInterface{
 
 	protected View rootView;
 	
@@ -31,7 +31,9 @@ public abstract class BaseFragment extends Fragment implements AcFmInterface{
 	}
 
 	@Override
-	public abstract int getRootViewId();
+	public int getRootViewId(){
+		return 0;
+	};
 
 	@Override
 	public void initView() {
@@ -64,5 +66,5 @@ public abstract class BaseFragment extends Fragment implements AcFmInterface{
 			break;
 		}
 	}
-	
+
 }

@@ -1,6 +1,6 @@
 package fragment;
 
-import util.dataUtil.ConfigDataUtil.DataRootFragmentUtil;
+import util.data.ConfigDataUtil.DataRootFragmentUtil;
 import android.widget.TextView;
 import base.BaseMainFragment;
 

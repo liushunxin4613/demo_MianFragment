@@ -5,20 +5,18 @@ import fragment.CFragment;
 import fragment.DFragment;
 import fragment.HomeFragment;
 
-import util.dataUtil.ConfigDataUtil.DataMainActivityUtil;
+import util.data.ConfigDataUtil.DataMainActivityUtil;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import base.BaseFragmentActivity;
+import base.BaseImmersionFragmentActivity;
 
 
-public class MainActivity extends BaseFragmentActivity implements OnClickListener{
+public class MainActivity extends BaseImmersionFragmentActivity{
 
 	private FrameLayout frameLayout;
 	
@@ -64,6 +62,10 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 	
 	@Override
 	public void initView() {
+		super.initView();
+		
+		getActionBar().setDisplayShowHomeEnabled(false);
+		isHome = false;
 		
 		frameLayout = (FrameLayout) findViewById(DataMainActivityUtil.FrameId);
 		
@@ -73,7 +75,6 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 		for (int i = 0; i < DataMainActivityUtil.RadioButtonArrId.length; i++) {
 			radioButtonArr[i] = (RadioButton) findViewById(DataMainActivityUtil.RadioButtonArrId[i]);
 			radioButtonArr[i].setId(i);
-			radioButtonArr[i].setOnClickListener(this);
 		}
 		
 		//³õÊ¼»¯Ê×¼ü
@@ -98,13 +99,6 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 				radioButtonArr[location].setTextColor(getResources().getColor(R.color.base_blue));
 			}
 		});
-		
-	}
-
-	@Override
-	public void onClick(View v) {
-		
-		
 		
 	}
 

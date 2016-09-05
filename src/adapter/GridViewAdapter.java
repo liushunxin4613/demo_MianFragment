@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +50,6 @@ public class GridViewAdapter extends BaseRootAdapter<Map<String, Integer>> {
 		holder.img.setBackgroundResource(list.get(position).get(toArr[0]));
 		holder.tv.setText(list.get(position).get(toArr[1]));
 		
-		Log.i("num= " + num, "minWidth= " + minWidth);
 		int width = parent.getWidth()/num;
 		if(width/4*3 > minWidth){
 			view.setLayoutParams(new LayoutParams(width, width/4*3));

@@ -7,18 +7,24 @@ import java.util.Map;
 
 import customLib.ExpandGridView;
 
-import util.dataUtil.ConfigDataUtil.DataHomeFragmentUtil;
+import util.data.ConfigDataUtil.DataHomeFragmentUtil;
+import activity.MapWebViewActivity;
 import adapter.GridViewAdapter;
 import adapter.ImgPagerAdapter;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import base.BaseMainFragment;
 
-public class HomeFragment extends BaseMainFragment implements OnPageChangeListener{
+public class HomeFragment extends BaseMainFragment implements OnPageChangeListener,OnItemClickListener{
 
 	private ViewPager viewPager;
 
@@ -52,6 +58,8 @@ public class HomeFragment extends BaseMainFragment implements OnPageChangeListen
 
 	@Override
 	public void initView() {
+		
+		ScrollView scrollView = (ScrollView) rootView.findViewById(DataHomeFragmentUtil.scrollViewId);
 		
 		viewPager = (ViewPager) rootView.findViewById(DataHomeFragmentUtil.ViewPagerId);
 
@@ -127,6 +135,12 @@ public class HomeFragment extends BaseMainFragment implements OnPageChangeListen
 		
 		gridViewAdapter.setParameter(numColumns, numColumns * DataHomeFragmentUtil.iconWidth + DataHomeFragmentUtil.restWidth);
 		
+		//设置点击事件
+		gridView.setOnItemClickListener(this);
+		
+		//初始化在顶部
+		scrollView.smoothScrollTo(0, 0);
+		
 	}
 
 	public ImageView getView(int resid){
@@ -161,6 +175,17 @@ public class HomeFragment extends BaseMainFragment implements OnPageChangeListen
 		//储存标记
 		location = postion;
 
+	}
+	
+	private Class<?> homeActivityArr[] = {
+			MapWebViewActivity.class
+	};
+
+	@Override
+	public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+		if (position < homeActivityArr.length) {
+			startActivity(new Intent(getActivity(), homeActivityArr[position]));
+		}
 	}
 
 }

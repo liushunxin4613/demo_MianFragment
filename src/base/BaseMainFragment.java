@@ -4,11 +4,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-public abstract class BaseMainFragment extends BaseFragment {
+public class BaseMainFragment extends BaseFragment {
 
-	@Override
-	public abstract int getRootViewId();
-	
 	@Override
 	public void setMenuVisibility(boolean menuVisible) {
 		super.setMenuVisibility(menuVisible);
